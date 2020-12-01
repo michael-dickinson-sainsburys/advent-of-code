@@ -1,14 +1,11 @@
 from itertools import product
 
+import utils
+
 sum_total = 2020
 
-with open("input_file.txt") as input_file:
-    raw_input = input_file.read().splitlines()
-
-input_values = [
-    int(x.strip())
-    for x in raw_input
-]
+input_values_from_file = utils.read_input_file()
+input_values = utils.convert_elements_in_list_to_integers(input_values_from_file)
 
 for values in product(input_values, input_values):
     if sum(list(values)) == sum_total:
