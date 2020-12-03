@@ -8,7 +8,7 @@ Y_INCREMENT = 3
 
 
 def is_a_tree(x, y):
-    return TREE_MAP[x][y % 30] == "#"
+    return TREE_MAP[x][y % (len(TREE_MAP[0]) - 1)] == "#"
 
 
 def next_location(x, y):
